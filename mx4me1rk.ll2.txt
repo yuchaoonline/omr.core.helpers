@@ -1,0 +1,96 @@
+﻿Revert "Initial commit"
+
+This reverts commit d98bce6fff4dbf0b84348c8312274d117bcd72b6.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   .nuget/NuGet.Config
+#	new file:   .nuget/NuGet.exe
+#	new file:   .nuget/NuGet.targets
+#	new file:   Bitmap1.bmp
+#	deleted:    LICENSE
+#	new file:   OMR.Core.Helpers.sln
+#	new file:   OMR.Core.Helpers.vssscc
+#	new file:   OMR.Core.Helpers/ApplicationHelper.cs
+#	new file:   OMR.Core.Helpers/AssertHelper.cs
+#	new file:   OMR.Core.Helpers/Bitmap1.bmp
+#	new file:   OMR.Core.Helpers/Bootstraper.cs
+#	new file:   OMR.Core.Helpers/Cache/ICacheManager.cs
+#	new file:   OMR.Core.Helpers/Cache/InMemoryCacheManager.cs
+#	new file:   OMR.Core.Helpers/CookieHelper.cs
+#	new file:   OMR.Core.Helpers/Database/DB.cs
+#	new file:   OMR.Core.Helpers/Database/EntityBase.cs
+#	new file:   OMR.Core.Helpers/Database/IStorage.cs
+#	new file:   OMR.Core.Helpers/Database/InMemoryPersistedStorage.cs
+#	new file:   OMR.Core.Helpers/EnumHelper.cs
+#	new file:   OMR.Core.Helpers/HashHelper.cs
+#	new file:   OMR.Core.Helpers/IOHelper.cs
+#	new file:   OMR.Core.Helpers/Ioc/IIocContainer.cs
+#	new file:   OMR.Core.Helpers/Ioc/InMemoryIocContainer.cs
+#	new file:   OMR.Core.Helpers/Ioc/IocContainer.cs
+#	new file:   OMR.Core.Helpers/Ioc/IocControllerFactory.cs
+#	new file:   OMR.Core.Helpers/Localization/ILocalizationManager.cs
+#	new file:   OMR.Core.Helpers/Localization/InMemoryLocalizationManager.cs
+#	new file:   OMR.Core.Helpers/Localization/LocalizationModule.cs
+#	new file:   OMR.Core.Helpers/OMR.Core.Helpers.csproj
+#	new file:   OMR.Core.Helpers/OMR.Core.Helpers.csproj.vspscc
+#	new file:   OMR.Core.Helpers/PathHelper.cs
+#	new file:   OMR.Core.Helpers/Patterns/Singleton.cs
+#	new file:   OMR.Core.Helpers/Patterns/command.txt
+#	new file:   OMR.Core.Helpers/Patterns/composite.txt
+#	new file:   OMR.Core.Helpers/Properties/AssemblyInfo.cs
+#	new file:   OMR.Core.Helpers/RandomHelper.cs
+#	new file:   OMR.Core.Helpers/SecureStringHelper.cs
+#	new file:   OMR.Core.Helpers/Web/ConfigHelper.cs
+#	new file:   OMR.Core.Helpers/Web/HttpApplication/BaseResponseFilter.cs
+#	new file:   OMR.Core.Helpers/Web/HttpApplication/GlobalResponseFilter.cs
+#	new file:   OMR.Core.Helpers/Web/RequestHelper.cs
+#	new file:   OMR.Core.Helpers/Web/UploadHelper.cs
+#	new file:   OMR.Core.Helpers/bin/Debug/OMR.Core.Helpers.dll
+#	new file:   OMR.Core.Helpers/bin/Debug/OMR.Core.Helpers.pdb
+#	new file:   OMR.Core.Helpers/bin/Debug/OMR.Core.Helpers.vshost.exe
+#	new file:   OMR.Core.Helpers/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	new file:   OMR.Core.Helpers/obj/Debug/OMR.Core.Helpers.csproj.FileListAbsolute.txt
+#	new file:   OMR.Core.Helpers/obj/Debug/OMR.Core.Helpers.csprojResolveAssemblyReference.cache
+#	new file:   OMR.Core.Helpers/obj/Debug/OMR.Core.Helpers.dll
+#	new file:   OMR.Core.Helpers/obj/Debug/OMR.Core.Helpers.pdb
+#	new file:   OMR.Tests/CacheManager/InMemoryCacheManagerTests.cs
+#	new file:   OMR.Tests/Class1.cs
+#	new file:   OMR.Tests/EnumHelperTests.cs
+#	new file:   OMR.Tests/Ioc/IocContainerTests.cs
+#	new file:   OMR.Tests/Localization/InMemoryLocalizationManagerTests.cs
+#	new file:   OMR.Tests/Misc/Email/EmailMan.cs
+#	new file:   OMR.Tests/OMR.Tests.csproj
+#	new file:   OMR.Tests/OMR.Tests.csproj.vspscc
+#	new file:   OMR.Tests/Properties/AssemblyInfo.cs
+#	new file:   OMR.Tests/TextFile1.txt
+#	new file:   OMR.Tests/UploadHelperTests.cs
+#	new file:   OMR.Tests/bin/Debug/OMR.Core.Helpers.dll
+#	new file:   OMR.Tests/bin/Debug/OMR.Core.Helpers.pdb
+#	new file:   OMR.Tests/bin/Debug/OMR.Tests.dll
+#	new file:   OMR.Tests/bin/Debug/OMR.Tests.pdb
+#	new file:   OMR.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	new file:   OMR.Tests/obj/Debug/OMR.Tests.csproj.FileListAbsolute.txt
+#	new file:   OMR.Tests/obj/Debug/OMR.Tests.csprojResolveAssemblyReference.cache
+#	new file:   OMR.Tests/obj/Debug/OMR.Tests.dll
+#	new file:   OMR.Tests/obj/Debug/OMR.Tests.pdb
+#	deleted:    README.md
+#	new file:   TestResults/OMR.Core.Helpers.TE.Tests.mdf
+#	new file:   TestResults/OMR.Core.Helpers.TE.Tests_log.ldf
+#	new file:   TestResults/ee08ae0f-dd65-43a3-b1e6-ad543f4c99ad/omr_OMRNB4 2013-01-18 00_32_08.coverage
+#	new file:   nuget_package/OMR.Core.Helpers.1.0.13.nupkg
+#	new file:   nuget_package/OMR.Core.Helpers.1.0.14.nupkg
+#	new file:   nuget_package/OMR.Core.Helpers.1.0.15.nupkg
+#	new file:   nuget_package/OMR.Core.Helpers.1.0.16.nupkg
+#	new file:   nuget_package/OMR.Core.Helpers.1.0.17.nupkg
+#	new file:   nuget_package/OMR.Core.Helpers.1.0.18.nupkg
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	Thumbs.db
+
