@@ -5,21 +5,25 @@ namespace OMR.Core.Helpers.Patterns
     public class Singleton<T>
     {
         private static object _lockObject = new object();
-        private static Func<T> _initiliazer;
 
+        private static Func<T> _initiliazer;
         private static T _instance;
+
         public static T Instance
         {
             get
             {
                 if (_initiliazer == null)
-                    return default(T);
+                    throw new InvalidOperationException("Initialize method must be called before the getting an instance");
 
                 if (_instance == null)
                 {
                     lock (_lockObject)
                     {
-                        _instance = _initiliazer();
+                        if (_instance == null)
+                        {
+                            _instance = _initiliazer();
+                        }
                     }
                 }
 
@@ -39,7 +43,6 @@ namespace OMR.Core.Helpers.Patterns
             _instance = instance;
             _initiliazer = new Func<T>(() => instance);
         }
-
 
     }
 }
