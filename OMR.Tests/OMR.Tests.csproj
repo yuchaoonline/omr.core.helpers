@@ -65,6 +65,7 @@
     <Compile Include="Localization\InMemoryLocalizationManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EnumHelperTests.cs" />
+    <Compile Include="GenericComparerTests.cs" />
     <Compile Include="UploadHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>

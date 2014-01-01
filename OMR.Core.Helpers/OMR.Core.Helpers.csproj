@@ -55,6 +55,8 @@
     <Compile Include="Extensions\EventHandlerExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="GenericComparer.cs" />
+    <Compile Include="Logging\ILogFactory.cs" />
+    <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Web\ConfigHelper.cs" />
     <Compile Include="CookieHelper.cs" />
     <Compile Include="Database\DB.cs" />

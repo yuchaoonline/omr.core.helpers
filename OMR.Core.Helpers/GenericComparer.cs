@@ -20,8 +20,8 @@
             if (destination == null)
                 throw new ArgumentNullException("destination");
 
-            if (SortFunc == null)
-                throw new InvalidProgramException("SortFunc has not implemented yet");
+            //if (SortFunc == null)
+            //    throw new InvalidProgramException("SortFunc has not implemented yet");
 
             if (CompareFunc == null)
                 throw new InvalidProgramException("CompareFunc has not implemented yet");
@@ -31,8 +31,11 @@
 
             //TODO argument exception
 
-            source = source.OrderBy(SortFunc).ToList();
-            destination = destination.OrderBy(SortFunc).ToList();
+            if (SortFunc != null)
+            {
+                source = source.OrderBy(SortFunc).ToList();
+                destination = destination.OrderBy(SortFunc).ToList();
+            }
 
             var result = new List<ComparisonResult<T>>();
 
@@ -74,7 +77,7 @@
                     }
                     else
                     {
-                        result.Add(new ComparisonResult<T>(destination[destinationIndex], ComparisonResultType.WMERGE));
+                        result.Add(new ComparisonResult<T>(source[sourceIndex], ComparisonResultType.CONFLICT));
                     }
 
                     sourceIndex += 1;
@@ -115,7 +118,7 @@
     public enum ComparisonResultType
     {
         UNKOWN,
-        WMERGE,
+        CONFLICT,
         WCREATE,
         WDELETE,
         IDENTICAL
