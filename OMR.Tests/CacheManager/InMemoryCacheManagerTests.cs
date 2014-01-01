@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OMR.Core.Helpers.Cache;
+using System;
 using System.Threading;
 
 namespace OMR.Tests.CacheManager
@@ -8,9 +9,25 @@ namespace OMR.Tests.CacheManager
     public class InMemoryCacheManagerTests
     {
         [TestMethod]
+        public void InMemoryCacheManager_GetOrSetTest1()
+        {
+            ICache cm = new InMemoryCache();
+
+            Func<string> function = () => { return "demo"; };
+
+            var expectedValue = function();
+
+            cm.GetOrSet<string>("key", function, 60);
+
+            var actualValue = cm.Get<string>("key", null);
+
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
         public void InMemoryCacheManager_SetGetIntegerValueIn20Seconds()
         {
-            ICacheManager cm = new InMemoryCacheManager();
+            ICache cm = new InMemoryCache();
             cm.Set("tmp1", 5, 20);
 
             Assert.AreEqual(cm.Get<int>("tmp1", -1), 5);
@@ -19,7 +36,7 @@ namespace OMR.Tests.CacheManager
         [TestMethod]
         public void InMemoryCacheManager_DefaultValueTest()
         {
-            ICacheManager cm = new InMemoryCacheManager();
+            ICache cm = new InMemoryCache();
 
             var expected = -3;
             var actual = cm.Get<int>("foo", expected);
@@ -30,7 +47,7 @@ namespace OMR.Tests.CacheManager
         [TestMethod]
         public void InMemoryCacheManager_SetGetExpandoObjectIn20Seconds()
         {
-            ICacheManager cm = new InMemoryCacheManager();
+            ICache cm = new InMemoryCache();
 
             string str = "test";
 
@@ -42,7 +59,7 @@ namespace OMR.Tests.CacheManager
         [TestMethod]
         public void InMemoryCacheManager_SetGetExpiredObjectIn1Seconds()
         {
-            ICacheManager cm = new InMemoryCacheManager();
+            ICache cm = new InMemoryCache();
 
             var expected = "Expected";
 

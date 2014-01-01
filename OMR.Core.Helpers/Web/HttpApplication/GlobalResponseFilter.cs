@@ -27,6 +27,9 @@ namespace OMR.Core.Helpers.Web.HttpApplication
 
             foreach (var item in _functions)
             {
+                if (item == null)
+                    continue;
+
                 input = item(input);
             }
 

@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Web;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OMR.Core.Helpers;
 using System.IO;
 using System.Text;
-using OMR.Core.Helpers;
+using System.Web;
 
 namespace OMR.Tests
 {

@@ -12,3 +12,10 @@ D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Tests\bin\Debug\OMR.Core.Help
 D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Tests\obj\Debug\OMR.Tests.csprojResolveAssemblyReference.cache
 D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Tests\obj\Debug\OMR.Tests.dll
 D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Tests\obj\Debug\OMR.Tests.pdb
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Tests\bin\Debug\OMR.Tests.dll
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Tests\bin\Debug\OMR.Tests.pdb
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Tests\bin\Debug\OMR.Core.Helpers.dll
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Tests\bin\Debug\OMR.Core.Helpers.pdb
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Tests\obj\Debug\OMR.Tests.csprojResolveAssemblyReference.cache
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Tests\obj\Debug\OMR.Tests.dll
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Tests\obj\Debug\OMR.Tests.pdb

@@ -1,51 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OMR.Core.Helpers;
-using System.ComponentModel;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OMR.Tests
 {
     [TestClass]
     public class EnumHelperTests
     {
-        internal enum EnumNonValuedTest
-        {
-            [System.ComponentModel.Description("0")]
-            Zero,
-
-            [System.ComponentModel.Description("1")]
-            One
-        }
-
-        internal enum EnumValuedTest
-        {
-            [System.ComponentModel.Description("RED 10")]
-            Red = 10,
-
-            [System.ComponentModel.Description("GREEN 30")]
-            Green = 30,
-
-            [System.ComponentModel.Description("BLUE 70")]
-            Blue = 70,
-
-            [System.ComponentModel.Description("PURPLE 120")]
-            Purple = 120
-        }
-
-        internal class CustomMapPoco
-        {
-            public int Value { get; set; }
-
-            public string Description { get; set; }
-
-            public CustomMapPoco(int value, string description)
-            {
-                Value = value;
-                Description = description;
-            }
-
-        }
-
         [TestMethod]
         public void EnumHelper_GetValue_ValuedEnum()
         {
@@ -114,6 +74,44 @@ namespace OMR.Tests
             enumerator.MoveNext();
 
             Assert.AreEqual(expected, enumerator.Current.Value);
+        }
+
+        internal enum EnumNonValuedTest
+        {
+            [System.ComponentModel.Description("0")]
+            Zero,
+
+            [System.ComponentModel.Description("1")]
+            One
+        }
+
+        internal enum EnumValuedTest
+        {
+            [System.ComponentModel.Description("RED 10")]
+            Red = 10,
+
+            [System.ComponentModel.Description("GREEN 30")]
+            Green = 30,
+
+            [System.ComponentModel.Description("BLUE 70")]
+            Blue = 70,
+
+            [System.ComponentModel.Description("PURPLE 120")]
+            Purple = 120
+        }
+
+        internal class CustomMapPoco
+        {
+            public int Value { get; set; }
+
+            public string Description { get; set; }
+
+            public CustomMapPoco(int value, string description)
+            {
+                Value = value;
+                Description = description;
+            }
+
         }
 
     }

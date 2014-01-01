@@ -49,11 +49,12 @@
   <ItemGroup>
     <Compile Include="ApplicationHelper.cs" />
     <Compile Include="Bootstraper.cs" />
-    <Compile Include="Cache\ICacheManager.cs" />
-    <Compile Include="Cache\InMemoryCacheManager.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\InMemoryCache.cs" />
     <Compile Include="Collections\MultiThreadQueue.cs" />
     <Compile Include="Extensions\EventHandlerExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="GenericComparer.cs" />
     <Compile Include="Web\ConfigHelper.cs" />
     <Compile Include="CookieHelper.cs" />
     <Compile Include="Database\DB.cs" />

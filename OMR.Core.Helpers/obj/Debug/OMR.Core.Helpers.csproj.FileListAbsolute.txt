@@ -8,3 +8,8 @@ D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Core.Helpers\bin\Debug\OMR.Co
 D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Core.Helpers\obj\Debug\OMR.Core.Helpers.csprojResolveAssemblyReference.cache
 D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Core.Helpers\obj\Debug\OMR.Core.Helpers.dll
 D:\dropbox\Google Drive\proje\OMR.Core.Helpers\OMR.Core.Helpers\obj\Debug\OMR.Core.Helpers.pdb
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Core.Helpers\bin\Debug\OMR.Core.Helpers.dll
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Core.Helpers\bin\Debug\OMR.Core.Helpers.pdb
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Core.Helpers\obj\Debug\OMR.Core.Helpers.dll
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Core.Helpers\obj\Debug\OMR.Core.Helpers.pdb
+C:\Users\omr\Documents\GitHub\omr.core.helpers\OMR.Core.Helpers\obj\Debug\OMR.Core.Helpers.csprojResolveAssemblyReference.cache

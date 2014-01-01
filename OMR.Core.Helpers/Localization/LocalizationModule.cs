@@ -1,5 +1,6 @@
 ﻿namespace OMR.Core.Helpers.Localization
 {
+    using OMR.Core.Helpers.Web.HttpApplication;
     using System;
     using System.Web;
 
@@ -18,9 +19,9 @@
             var application = (HttpApplication)sender;
 
             //TODO:
-            //application.Context.Response.Filter = new GlobalResponseFilter(
-            //    application.Context.Response.Filter, (s) => { return s.Replace("#hi#", "heyya"); }
-            //);
+            application.Context.Response.Filter = new GlobalResponseFilter(
+                application.Context.Response.Filter, (s) => { return s.Replace("#hi#", "heyya"); }
+            );
         }
     }
 }
