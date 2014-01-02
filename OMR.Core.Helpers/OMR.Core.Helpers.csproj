@@ -52,6 +52,9 @@
     <Compile Include="Cache\ICache.cs" />
     <Compile Include="Cache\InMemoryCache.cs" />
     <Compile Include="Collections\MultiThreadQueue.cs" />
+    <Compile Include="Diff\ByteData.cs" />
+    <Compile Include="Diff\ByteDifference.cs" />
+    <Compile Include="Diff\FileDiffrence.cs" />
     <Compile Include="Extensions\EventHandlerExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="GenericComparer.cs" />

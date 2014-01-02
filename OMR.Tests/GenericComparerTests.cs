@@ -1,7 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OMR.Core.Helpers;
+using OMR.Core.Helpers.Diff;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -28,8 +30,7 @@ namespace OMR.Tests
 
             var result = gc.Compare(ba2.ToList(), ba1.ToList());
 
-            var p = new Patcher(by1);
-            var newBytes = p.ApplyChanges(result);
+            var newBytes = ByteDifference.ApplyChanges(by1, result);
 
             var newText = Encoding.UTF8.GetString(newBytes);
 
@@ -81,8 +82,7 @@ namespace OMR.Tests
 
             Assert.AreEqual(differences, result.Count);
 
-            var p = new Patcher(bList1);
-            var newBytes = p.ApplyChanges(result);
+            var newBytes = ByteDifference.ApplyChanges(bList1, result);
 
             var s = string.Empty;
             for (int i = 0; i < maxBytesCount; i++)
@@ -93,59 +93,14 @@ namespace OMR.Tests
             CollectionAssert.AreEqual(bList2, newBytes);
         }
 
-        public struct ByteData
+        [TestMethod]
+        public void DiffAndPathFile()
         {
-            public byte Value { get; set; }
+            var diff = FileDiffrence.GetDiff(@"c:\tests\f2.txt", @"c:\tests\f1.txt");
+            var newBytes = FileDiffrence.ApplyChanges(File.ReadAllBytes(@"c:\tests\f1.txt"), diff);
 
-            public int Order { get; set; }
-
-            public static ByteData[] GetByteData(byte[] bytes)
-            {
-                var data = new ByteData[bytes.Length];
-
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    data[i].Order = i;
-                    data[i].Value = bytes[i];
-                }
-
-                return data;
-            }
+            File.WriteAllBytes(@"c:\tests\f3.txt", newBytes);
         }
-
-        public class Patcher
-        {
-            private List<byte> _bytes;
-
-            public Patcher(byte[] bytes)
-            {
-                _bytes = new List<byte>(bytes);
-            }
-
-            public byte[] ApplyChanges(List<ComparisonResult<ByteData>> result)
-            {
-                var orderedResults = result.OrderByDescending(c => c.Value.Order);
-
-                foreach (var item in orderedResults)
-                {
-                    if (item.Target == ComparisonResultType.CONFLICT)
-                    {
-                        _bytes[item.Value.Order] = item.Value.Value;
-                    }
-                    else if (item.Target == ComparisonResultType.WCREATE)
-                    {
-                        _bytes.Insert(item.Value.Order, item.Value.Value);
-                    }
-                    else if (item.Target == ComparisonResultType.WDELETE)
-                    {
-                        _bytes.RemoveAt(item.Value.Order);
-                    }
-                }
-
-                return _bytes.ToArray();
-            }
-        }
-
     }
 
 }
