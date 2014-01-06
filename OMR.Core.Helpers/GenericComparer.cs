@@ -10,32 +10,15 @@
 
         public Func<T, T, int> CompareFunc { get; set; }
 
-        public Func<T, T, bool> EqualsFunc { get; set; }
+        public Func<T, T, bool> DetectChangesFunc { get; set; }
 
         public List<ComparisonResult<T>> Compare(List<T> source, List<T> destination, bool inculudeIndenticals = false)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (destination == null)
-                throw new ArgumentNullException("destination");
-
-            //if (SortFunc == null)
-            //    throw new InvalidProgramException("SortFunc has not implemented yet");
-
-            if (CompareFunc == null)
-                throw new InvalidProgramException("CompareFunc has not implemented yet");
-
-            if (EqualsFunc == null)
-                throw new InvalidProgramException("DetectChangesFunc has not implemented yet");
-
+            if(source == null )
             //TODO argument exception
 
-            if (SortFunc != null)
-            {
-                source = source.OrderBy(SortFunc).ToList();
-                destination = destination.OrderBy(SortFunc).ToList();
-            }
+            source = source.OrderBy(SortFunc).ToList();
+            destination = destination.OrderBy(SortFunc).ToList();
 
             var result = new List<ComparisonResult<T>>();
 
@@ -69,7 +52,7 @@
 
                 if (0 == compareResult)
                 {
-                    if (EqualsFunc(destination[destinationIndex], source[sourceIndex]))
+                    if (DetectChangesFunc(destination[destinationIndex], source[sourceIndex]))
                     {
                         //IDENTICAL
                         if(inculudeIndenticals)
@@ -77,7 +60,7 @@
                     }
                     else
                     {
-                        result.Add(new ComparisonResult<T>(source[sourceIndex], ComparisonResultType.CONFLICT));
+                        result.Add(new ComparisonResult<T>(destination[destinationIndex], ComparisonResultType.WMERGE));
                     }
 
                     sourceIndex += 1;
@@ -118,7 +101,7 @@
     public enum ComparisonResultType
     {
         UNKOWN,
-        CONFLICT,
+        WMERGE,
         WCREATE,
         WDELETE,
         IDENTICAL

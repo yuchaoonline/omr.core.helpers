@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace OMR.Core.Helpers.Diff
@@ -17,29 +18,10 @@ namespace OMR.Core.Helpers.Diff
             return gc.Compare(wSource.ToList(), wDestination.ToList());
         }
 
+        //TODO:
         public static byte[] ApplyChanges(byte[] bytes, List<ComparisonResult<ByteData>> result)
         {
-            var listOfBytes = new List<byte>(bytes);
-
-            var orderedResults = result.OrderByDescending(c => c.Value.Order);
-
-            foreach (var item in orderedResults)
-            {
-                if (item.Target == ComparisonResultType.CONFLICT)
-                {
-                    listOfBytes[item.Value.Order] = item.Value.Value;
-                }
-                else if (item.Target == ComparisonResultType.WCREATE)
-                {
-                    listOfBytes.Insert(item.Value.Order, item.Value.Value);
-                }
-                else if (item.Target == ComparisonResultType.WDELETE)
-                {
-                    listOfBytes.RemoveAt(item.Value.Order);
-                }
-            }
-
-            return bytes.ToArray();
+            throw new NotImplementedException();
         }
 
        
